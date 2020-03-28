@@ -1,4 +1,4 @@
-package com.github.fhermansson.gradle.assertj.plugin
+package com.github.carlobellettini.gradle.assertj.plugin
 
 import org.gradle.api.Plugin
 import org.gradle.api.Project

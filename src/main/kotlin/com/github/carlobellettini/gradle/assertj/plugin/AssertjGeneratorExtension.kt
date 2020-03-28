@@ -1,4 +1,4 @@
-package com.github.fhermansson.gradle.assertj.plugin
+package com.github.carlobellettini.gradle.assertj.plugin
 
 import org.assertj.assertions.generator.AssertionsEntryPointType
 import org.gradle.api.Project
@@ -48,4 +48,9 @@ open class AssertjGeneratorExtension(project: Project) {
      * Clean output directory before generating assertions.
      */
     val cleanOutputDir: Boolean = true
+
+    /**
+     * Consider not public properties and fields.
+     */
+    var privateFields: Boolean = false
 }

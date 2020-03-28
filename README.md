@@ -1,14 +1,23 @@
+This a fork of com.github.fhermansson.assertj-generator
+
+main difference is the availability of the new property
+
+| Property | Type | Default | Description |
+| -------- | ---- | ------- | ------------|
+|privateFields|boolean|false|Generate assertions for not public properties and fields|
+
+This fork is used mainly as a demostration plugin at the course of "Verifica e convalida del Software" University of Milan - Italy.
+
 ### Assertj assertions generator gradle plugin
 
 A gradle plugin with task to generate assertions using [AssertJ Assertions Generator](http://joel-costigliola.github.io/assertj/assertj-assertions-generator.html).
 
 The task `generateAssertions` will by default run after `classes` and before `compileTestJava`
 
-
 #### Configuration
 ```groovy
 plugins {
-  id "com.github.fhermansson.assertj-generator" version "1.1.2"
+  id "com.github.carlobellettini.assertj-generator-p" version "1.0"
 }
 
 assertjGenerator {
@@ -18,7 +27,7 @@ assertjGenerator {
 
 The `assertjGenerator` extension configures the `generateAssertions` task, and provides default values for additional 
 tasks of 
-type `com.github.fhermansson.gradle.assertj.plugin.GenerateAssertions`.
+type `com.github.carlobellettini.gradle.assertj.plugin.GenerateAssertions`.
 
 ##### Properties
 
@@ -32,6 +41,7 @@ type `com.github.fhermansson.gradle.assertj.plugin.GenerateAssertions`.
 |entryPointTypes|AssertionsEntryPointType[]|['STANDARD']|Types of entry point classes to generate. Possible values: 'STANDARD', 'SOFT', 'BDD', 'JUNIT_SOFT'|
 |entryPointInherits|boolean|true|Entry point classes [inherit](http://joel-costigliola.github.io/assertj/assertj-core-custom-assertions.html#single-assertion-entry-point) from core Assertj classes|
 |cleanOutputDir|boolean|true|Remove all files in `outputDir` before generating assertions.|
+|privateFields|boolean|false|Generate assertions for not public properties and fields|
 
 
 ##### How to create additional tasks
@@ -52,6 +62,5 @@ task generateOtherAssertions(type: GenerateAssertions) {
      sourceSet = sourceSets.other
      testSourceSet = sourceSets.otherTest
  }
-
 ```
 
