@@ -13,7 +13,7 @@ buildscript {
 
 plugins {
     id 'java-gradle-plugin'
-    id "com.gradle.plugin-publish" version "0.9.9"
+    id "com.gradle.plugin-publish" version '0.11.0'
     id 'org.jmailen.kotlinter' version '1.5.0'
     id "maven-publish"
 }
