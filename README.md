@@ -17,11 +17,12 @@ The task `generateAssertions` will by default run after `classes` and before `co
 #### Configuration
 ```groovy
 plugins {
-  id "com.github.carlobellettini.assertj-generator-p" version "1.0"
+  id "com.github.carlobellettini.assertj-generator-gradle-plugin-p" version "1.0"
 }
 
 assertjGenerator {
     classOrPackageNames = ['com.example.model']
+    privateFields = true
 }
 ```
 
